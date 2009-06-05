@@ -1,0 +1,26 @@
+<Addin id="EmailNotesAddin"
+	namespace="Tomboy"
+	name="Emailing  Support"
+	author="Tomboy Project"
+	description="Allows you to email a note."
+	category="Tools"
+	defaultEnabled="true"
+	version="0.1">
+
+	<Runtime>
+		<Import assembly="EmailNotes.dll" />
+	</Runtime>
+
+	<Dependencies>
+		<Addin id="Tomboy" version="0.10" />
+	</Dependencies>
+
+	<Extension path="/Tomboy/NoteAddins">
+		<NoteAddin type="Tomboy.EmailNotes.EmailNotesNoteAddin" />
+	</Extension>
+	
+	<Extension path="/Tomboy/AddinPreferences">
+                  <AddinPreferenceFactory type="Tomboy.EmailNotes.EmailNotesPreferenceFactory" />
+    </Extension>
+
+</Addin>
