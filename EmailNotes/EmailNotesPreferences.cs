@@ -109,8 +109,8 @@ namespace Tomboy.EmailNotes
 			use_ssl = new Gtk.CheckButton (Catalog.GetString("Use SSL?"));
 			PackStart (use_ssl);
 			// Activate/deactivate widgets
-			if(Preferences.Get(smtpUseSSLPrefPath) == true)
-				email_format.Active =  true;
+			if((bool)Preferences.Get(smtpUseSSLPrefPath))
+				use_ssl.Active =  true;
 			
 			// Register checked state for email format
 			use_ssl.Toggled += OnUseSSLToggled;

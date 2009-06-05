@@ -62,9 +62,10 @@ namespace Tomboy.EmailNotes{
 				                                 Convert.ToInt32(Preferences.Get("/apps/tomboy/email_notes/smtp_server_port")));
 				smtp.Credentials = new System.Net.NetworkCredential(
 					           Preferences.Get("/apps/tomboy/email_notes/smtp_auth_user").ToString(),
-					           Preferences.Get("/apps/tomboy/email_notes/smtp_auth_user").ToString());
+					           Preferences.Get("/apps/tomboy/email_notes/smtp_auth_pass").ToString());
+				
 				smtp.EnableSsl = true;
-				smtp.Timeout = 50000;
+				smtp.Timeout = 5000;
 				smtp.Send( mail );
 				Logger.Info("Email sent from {0} to {1}", Preferences.Get("/apps/tomboy/email_notes/email_to").ToString(),
 			            Preferences.Get("/apps/tomboy/email_notes/email_from").ToString());
